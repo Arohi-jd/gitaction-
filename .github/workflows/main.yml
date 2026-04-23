@@ -16,4 +16,4 @@ jobs:
       - name: Setup Node env
         uses: actions/setup-node@v3
       - name: Run index File 
-        run: npm start
+        run: node index.js

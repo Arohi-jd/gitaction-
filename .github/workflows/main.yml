@@ -1,0 +1,19 @@
+name: my_first_workflow
+on: 
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  ci_jobs:
+    defaults:
+      run:
+        working-directory: server
+    runs-on: ubuntu-latest
+    steps:
+      - name: Load Virtual machine
+        uses: actions/checkout@v4
+      - name: Setup Node env
+        uses: actions/setup-node@v3
+      - name: Run index File 
+        run: npm start
